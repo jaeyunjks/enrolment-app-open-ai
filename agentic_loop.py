@@ -71,12 +71,11 @@ def get_local_agent_advice(observe_message):
         "- POST /ask\n\n"
         f"OBSERVE result: {observe_message}\n\n"
         "Rules:\n"
-        "- Do not invent new database fields.\n"
-        "- Do not invent new endpoints.\n"
-        "- Do not recommend functionality that already exists.\n"
-        "- Recommend one small improvement to validation, error handling, "
-        "response formatting, or testing.\n"
-        "- Return exactly two bullet points."
+        "- The app already has student_id as INTEGER PRIMARY KEY — do not suggest adding it.\n"
+        "- Do not suggest new endpoints.\n"
+        "- Do not suggest features that already exist.\n"
+        "- Recommend exactly one improvement to error handling or response formatting.\n"
+        "- Return exactly two bullet points, each under 20 words.\n"
     )
 
     try:
