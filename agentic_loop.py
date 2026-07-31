@@ -30,14 +30,22 @@ def validate_student(student):
     if not isinstance(student_id, int):
         return False, "student_id must be an integer"
 
-    if not student_name:
-        return False, "student_name is required"
+    if student_id <= 0:
+        return False, "student_id must be a positive integer"
 
-    if not subject_code:
-        return False, "subject_code is required"
+    if not student_name or not student_name.strip():
+        return False, "student_name is required and cannot be blank"
+
+    if len(student_name.strip()) < 2:
+        return False, "student_name must be at least 2 characters"
+
+    if not subject_code or not subject_code.strip():
+        return False, "subject_code is required and cannot be blank"
+
+    if len(subject_code.strip()) < 3:
+        return False, "subject_code must be at least 3 characters"
 
     return True, "ok"
-
 
 def observe_data_quality():
     conn = sqlite3.connect(DATABASE_NAME)
