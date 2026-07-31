@@ -26,7 +26,8 @@
 
                 <h2>Find Student by ID</h2>
 
-                <form hx-get="/students/by-id" hx-target="#student-result">
+                <form hx-get="/students/by-id" hx-target="#student-result" hx-swap="innerHTML"
+                    hx-error="#student-result">
                     <label for="student_id">Student ID</label>
                     <input id="student_id" name="student_id" type="number" min="1" placeholder="Enter student ID">
                     <button type="submit">Get Student</button>
