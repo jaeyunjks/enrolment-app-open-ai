@@ -56,6 +56,17 @@
                 </form>
 
                 <div id="agent-result" class="panel"></div>
+
+                <h2>Ask With Context</h2>
+
+                <form hx-post="/ask-with-context" hx-target="#context-result">
+                    <label for="context-question">Question</label>
+                    <textarea id="context-question" name="question"
+                        rows="4">Explain the Student Enrolment App.</textarea>
+                    <button type="submit">Ask With Context</button>
+                </form>
+
+                <div id="context-result" class="panel"></div>
             </section>
         </div>
     </main>
