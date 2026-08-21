@@ -1,0 +1,45 @@
+Application Scope:
+- database fields: student_id, student_name, subject_code
+- endpoints: /students, /students/<student_id>, /students/by-id, /students/by-subject, /ask, /ask-with-context
+
+Important domain rule:
+- subject_code is NOT unique.
+- Multiple students may enrol in the same subject.
+- Any recommendation to make subject_code unique is invalid.
+
+Implementation Recommendation:
+{{IMPLEMENTATION_RECOMMENDATION}}
+
+Validation Evidence:
+{{VALIDATION_EVIDENCE}}
+
+Task:
+Review only the Implementation Recommendation against the supplied Validation Evidence.
+
+A risk is valid only when the Validation Evidence explicitly shows a failure, incorrect response, error, or other undesired behaviour.
+
+Do not infer hypothetical risks or failures from domain characteristics.
+
+The fact that subject_code is non-unique is expected and valid behaviour. Multiple students sharing the same subject_code must not be treated as a risk.
+
+If the Validation Evidence says the subject search passed and the Implementation Recommendation says "No evidence-backed improvement identified.", return the exact no-risk output below without adding any other risk:
+
+Risk: No evidence-backed risk identified.
+Correction: No correction required.
+Retest: Repeat validation after future changes.
+
+Do not recommend additional validation for behaviour that the supplied evidence already shows has passed.
+Format:
+Risk: <one short sentence>
+Correction: <one short sentence>
+Retest: <one short sentence>
+
+If no risk is supported by the evidence, use:
+Risk: No evidence-backed risk identified.
+Correction: No correction required.
+Retest: Repeat validation after future changes.
+
+Output rules:
+- Return exactly three lines.
+- Maximum 35 words total.
+- Do not explain reasoning.
